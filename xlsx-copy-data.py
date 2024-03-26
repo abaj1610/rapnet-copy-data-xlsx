@@ -75,6 +75,7 @@ def main():
     print(file_path)
     sheet_name = "Data"
     
+    st.write(file_path)
     # This block runs only when the submit button is clicked
     if submit_button:
         # Calling the Function of Converting the Data into a CSV
