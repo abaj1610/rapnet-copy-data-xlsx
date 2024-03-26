@@ -1,7 +1,6 @@
 import openpyxl
 import streamlit as st
-import sys
-import path
+import os
 
 def find_last_non_empty_row(worksheet):
     max_row = worksheet.max_row
@@ -66,16 +65,12 @@ def main():
     # Map each column index to the corresponding element index in the input string
     columns_data = {3: -2, 9: 22, 10: 21, 11: 4, 12: 5, 13: 6, 15: 7, 16: 8, 17: 9, 18: 10, 19: 11, 20: 20, 21: 18, 22: 19, 25: 13, 26:15, 24: 14}
 
-    dir = path.Path(__file__).abspath()
-    sys.path.append(dir.parent.parent)
-
-    # Construct the full path to the file
-    
-    file_path = './buying-data.xlsx'
-    print(file_path)
+    # Constructing file path using pathlib
     sheet_name = "Data"
     
-    st.write(file_path)
+    file_path = os.path.expanduser('~/Documents/buying-data.xlsx')
+    print(file_path)
+    # st.write(file_path)
     # This block runs only when the submit button is clicked
     if submit_button:
         # Calling the Function of Converting the Data into a CSV
