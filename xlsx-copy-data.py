@@ -69,12 +69,12 @@ def main():
     sheet_name = "Data"
     
     file_path = os.path.expanduser('~/Documents/buying-data.xlsx')
-    print(os.getcwd())
+    st.write(os.getcwd())
     # st.write(file_path)
     # This block runs only when the submit button is clicked
     if submit_button:
         # Calling the Function of Converting the Data into a CSV
-        append_elements_to_excel(input_string, columns_data, file_path, sheet_name)
+        # append_elements_to_excel(input_string, columns_data, file_path, sheet_name)
         st.session_state['form_submitted'] = True  # Set the flag indicating a form submission
         st.rerun()  # Rerun the script immediately to reflect change
 
