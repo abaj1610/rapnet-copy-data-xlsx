@@ -69,7 +69,7 @@ def main():
     sheet_name = "Data"
     
     file_path = os.path.expanduser('~/Documents/buying-data.xlsx')
-    print(file_path)
+    print(os.getcwd())
     # st.write(file_path)
     # This block runs only when the submit button is clicked
     if submit_button:
