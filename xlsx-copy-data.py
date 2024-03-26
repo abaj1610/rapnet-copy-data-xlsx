@@ -65,7 +65,7 @@ def main():
     columns_data = {3: -2, 9: 22, 10: 21, 11: 4, 12: 5, 13: 6, 15: 7, 16: 8, 17: 9, 18: 10, 19: 11, 20: 20, 21: 18, 22: 19, 25: 13, 26:15, 24: 14}
 
     file_path = "Buying Data.xlsx"
-    sheet_name = "B & S"
+    sheet_name = "Data"
     
     # This block runs only when the submit button is clicked
     if submit_button:
