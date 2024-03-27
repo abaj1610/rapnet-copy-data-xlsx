@@ -68,7 +68,7 @@ def main():
     # Constructing file path using pathlib
     sheet_name = "Data"
     
-    file_path = os.path.expanduser('~/Documents/buying-data.xlsx')
+    file_path = os.path.expanduser('~/Documents')
     os.chdir(file_path)
     st.write(os.getcwd())
     # st.write(file_path)
