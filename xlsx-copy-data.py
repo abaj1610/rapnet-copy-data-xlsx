@@ -68,8 +68,8 @@ def main():
     # Constructing file path using pathlib
     sheet_name = "Data"
     
-    os.chdir(file_path)
     file_path = os.path.expanduser('~/Documents/buying-data.xlsx')
+    os.chdir(file_path)
     st.write(os.getcwd())
     # st.write(file_path)
     # This block runs only when the submit button is clicked
