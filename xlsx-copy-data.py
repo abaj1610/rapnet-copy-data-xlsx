@@ -27,7 +27,7 @@ def append_elements_to_excel(input_string, columns_data, file_path, sheet_name):
         if element < len(string_list):
             value = string_list[element]
             if isinstance(value, str) and value.startswith('$'):
-                    value = float(value[1:])
+                    value = float(value.replace(',','')[1:])
             if isinstance(value, str) and value.endswith('%'):
                     value = float(value[:-1])
             worksheet.cell(row=next_empty_row, column=column, value=value)
@@ -65,17 +65,14 @@ def main():
     # Map each column index to the corresponding element index in the input string
     columns_data = {3: -2, 9: 22, 10: 21, 11: 4, 12: 5, 13: 6, 15: 7, 16: 8, 17: 9, 18: 10, 19: 11, 20: 20, 21: 18, 22: 19, 25: 13, 26:15, 24: 14}
 
-    # Constructing file path using pathlib
-    sheet_name = "Data"
+    # EXCEL DETAILS
+    file_path = 'Buying Data.xlsx'
+    sheet_name = "B & S"
     
-    file_path = os.path.expanduser('~/Documents')
-    os.chdir(file_path)
-    st.write(os.getcwd())
-    # st.write(file_path)
     # This block runs only when the submit button is clicked
     if submit_button:
         # Calling the Function of Converting the Data into a CSV
-        # append_elements_to_excel(input_string, columns_data, file_path, sheet_name)
+        append_elements_to_excel(input_string, columns_data, file_path, sheet_name)
         st.session_state['form_submitted'] = True  # Set the flag indicating a form submission
         st.rerun()  # Rerun the script immediately to reflect change
 
