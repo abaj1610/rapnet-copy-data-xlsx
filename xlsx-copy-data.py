@@ -1,6 +1,5 @@
 import openpyxl
 import streamlit as st
-import os
 
 def find_last_non_empty_row(worksheet):
     max_row = worksheet.max_row
